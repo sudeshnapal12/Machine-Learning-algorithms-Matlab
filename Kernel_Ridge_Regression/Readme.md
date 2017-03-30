@@ -20,3 +20,5 @@ of the Gaussian kernel.</br>
 __lambda = 2e - 05__, __Gaussian and linear kernel__. Report training and test error. </br>
 
 (d) Repeat the above with __lambda = 0:002__.</br>
+
+__NOTE:__ Change comments and uncomments in test_krr.m to get train error. So, basically loop across testing samples in test while calculating test error and loop around training samples while calculating train error. </br>
