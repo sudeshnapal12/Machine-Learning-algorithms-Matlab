@@ -3,15 +3,15 @@ function [ypredicted] = test_ksvm_dual(alpha, Xtr, ytr, Xte, kernel, gamma)
     Xte = Xte';
     ytr = ytr';
     K = [];
-    [trainData, d] = size(Xte);
-    [testData, d] = size(Xtr);
+    [testData, d] = size(Xte);
+    [trainData, d] = size(Xtr);
     ypredicted = zeros(testData,1);
 
     for i = 1:testData
         summ = 0;
         for j = 1:trainData
-            x1 = Xtr(j,:);
-            x2 = Xte(i,:);
+            x1 = Xte(i,:);
+            x2 = Xtr(j,:);            
             if strcmp(kernel, 'linear')
                 K = linearKernel1(x1,x2);
             else
