@@ -1,0 +1,50 @@
+load('mnist.mat');
+Xtr = Xtr'; %initialize dataset here
+ytr = ytr';
+Xte = Xte';
+yte = yte';
+
+nSamples = size(Xtr,1);
+nFtrs = size(Xtr,2);
+    
+KVec = [2, 4, 6, 8, 10, 12, 14];
+totSumVec = [];
+purityVec = [];
+for K=1:size(KVec,2)
+    disp(K);
+    max_iterations = 10;
+    [closestCentroidID, centroids] = kmeans(Xtr, KVec(K), max_iterations);
+
+    %total within group sum of squares
+    totSum = 0;
+    for j=1:nSamples
+        totSum = sum(Xtr(j,:) - centroids(closestCentroidID(j), :)).^2;            
+    end
+    disp(totSum);
+    totSumVec(K) = totSum; 
+    
+    %Purity calculation
+    purity = 0;
+    for j=1:k
+        yj = ytr(closestCentroidID==j, :);
+        enc.val = unique(ytr);
+        enc.rep = histc(yj,enc.val);
+        sort(enc.rep, 'descend');
+        max = enc.rep(1);
+        purity = purity + max;
+    end
+    purityVec(K) = purity/nSamples;
+end
+
+%disp(totSumVec)
+%   1.0e+06 *
+%    3.2799    0.7263    0.4260    0.0096    0.0002    0.0001    0.0000
+% 1 3.2799e+06
+% 2  7.2632e+05
+% 3   4.2602e+05
+% 4   9.6495e+03
+% 5  164.6942
+% 6  104.5080
+% 7   16.2204
+plot(KVec, totSumVec);
+plot(KVec, purityV
