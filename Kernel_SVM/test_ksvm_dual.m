@@ -14,10 +14,8 @@ function [ypredicted] = test_ksvm_dual(alpha, Xtr, ytr, Xte, kernel, gamma)
             x2 = Xtr(j,:);            
             if strcmp(kernel, 'linear')
                 K = linearKernel1(x1,x2);
-            else
-                if strcmp(kernel,'gaussian')
-                   K = gaussianKernel1(x1,x2,gamma);
-                end
+            elseif strcmp(kernel,'gaussian')
+                K = gaussianKernel1(x1,x2,gamma);
             end
             summ = summ + alpha(j)* ytr(j) * K;    
         end
