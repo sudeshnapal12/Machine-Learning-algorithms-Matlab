@@ -1,4 +1,4 @@
-# Machine-Learning---Linear-regression-using-polynomial-basis-functions
+# Linear-regression-using-polynomial-basis-functions
 
 Implement linear regression using polynomial basis functions. Use only monomials of a single variable, and no cross-terms.
 
