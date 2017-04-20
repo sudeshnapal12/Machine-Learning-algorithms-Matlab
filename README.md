@@ -1,4 +1,4 @@
-####### Machine-Learning-algorithms-Matlab
+# Machine-Learning-algorithms-Matlab
 
 1. Linear Regresssion using polynomial basis functions
 2. Kernel Ridge Regression
