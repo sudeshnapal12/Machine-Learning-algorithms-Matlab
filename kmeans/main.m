@@ -37,6 +37,17 @@ for K=1:size(KVec,2)
     end   
     
     % Purity calculation
+    %purityVec = zeros(KVec(K), size(unique(ytr),1));
+    
+    %for j=1:nSamples
+    %purityVec(closestCentroidID(j), ytr(j)+1) = purityVec(closestCentroidID(j), ytr(j)+1) + 1;
+    %end
+    %disp(purityVec);
+    
+    %purityVec = 1 / nSamples * (sum(max(purityVec')));
+    %maxPurityVec(1, K) = purityVec;
+    
+    
     purity = 0;
     for j=1:KVec(K)
         yj = ytr(closestCentroidID==j, :);
