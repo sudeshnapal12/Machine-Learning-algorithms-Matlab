@@ -22,8 +22,13 @@ Delta2 = [0, 1, 2, 2, 2, 2, 2, 2, 2, 2;
          2, 2, 2, 2, 2, 2, 2, 1, 0, 1;
          2, 2, 2, 2, 2, 2, 2, 2, 1, 0];
      
-[alpha, Xsv] = train_mhinge_krnel_sgd(Xtr, ytr, Delta, 5);
-[ypred] = test_mhinge_kernel_sgd(alpha, Xsv, Xte, 5);
+% SGD with multiclass hinge loss
+[w] = train_multiclass_hinge_sgd(Xtr, ytr, Delta);
+[ypred] = test_multiclass_hinge_sgd(w, Xte);
+
+% SGD with multiclass hinge loss with polynomial kernel
+%[alpha, Xsv] = train_mhinge_krnel_sgd(Xtr, ytr, Delta, 5);
+%[ypred] = test_mhinge_kernel_sgd(alpha, Xsv, Xte, 5);
 
 % 0-1 Loss
 yte = yte-min(yte)+1;    
