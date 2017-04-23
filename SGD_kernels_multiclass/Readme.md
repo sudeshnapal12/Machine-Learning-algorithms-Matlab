@@ -8,6 +8,13 @@
 correct label is "3"), and pay 2 for all the other cases.
 
 <b>RESULTS</b>
+### Without Kernels
+* 0/1 loss for Delta1 = 8.52%
+* 0/1 loss for Delta2  = 8.31%
+* <b>Hence we see that when there are no kernels, larger penalizing or using different Delta's helped in reducing loss. But when there are kernels it didn't matter.</b>
+* Also attached without_Kernels_confusionMatrix_Delta1.png and without_Kernels_confusionMatrix_Delta2.png.
+
+### With Kernels
 * 0/1 loss for both the deltas is the same = 3.75% 
 It didn't matter what deltas were defined.
 * The loss run on 100 samples was 37%. On 1000 samples was 14% and 10000 samples was 6.33%. Loss was reducing very fast. It didn't matter much after certain number of samples.
