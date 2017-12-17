@@ -1,6 +1,6 @@
-# Machine-Learning-algorithms-Matlab
+# Machine Learning algorithms in Matlab implemented in CSE 512 - Machine Learning course taken by [Professor Franciso Orabona](http://francesco.orabona.com/).
 
-1. Linear Regresssion using polynomial basis functions (Lab 1)
+1. Linear Regression using polynomial basis functions (Lab 1)
 2. Perceptron (Lab 2)
 3. Ridge Regression (Lab 2)
 4. SVM Primal (Lab 2)
